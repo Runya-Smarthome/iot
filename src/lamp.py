@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(8, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(7, GPIO.OUT, initial=GPIO.LOW)
 
 class Lamp:
     def __init__(self):
@@ -15,6 +15,6 @@ class Lamp:
             while not queue.empty():
                 queueMessage = str(queue.get())
                 if(queueMessage == "ON") :
-                    GPIO.output(8, GPIO.HIGH)
+                    GPIO.output(7, GPIO.HIGH)
                 elif(queueMessage == "OFF"):
-                    GPIO.output(8, GPIO.LOW)
+                    GPIO.output(7, GPIO.LOW)

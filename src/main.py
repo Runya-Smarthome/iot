@@ -3,7 +3,7 @@ from mqttSubsriber import Client
 from threading import Thread
 
 lamp = Lamp()
-client = Client("raspberry/led")
+client = Client("raspi/led")
 
 if __name__ == "__main__":
     t1 = Thread(target=lamp.firstLamp, args=(client.mqttValue(),))
